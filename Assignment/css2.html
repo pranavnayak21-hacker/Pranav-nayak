@@ -1,33 +1,52 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #667eea, #764ba2);
+    margin: 0;
+    padding: 30px;
 }
 
+/* Heading */
 h2 {
-    color: #2c3e50;
     text-align: center;
+    color: white;
+    margin-bottom: 20px;
 }
 
+/* Ordered list container */
 ol {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 10px;
-    width: 50%;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 55%;
     margin: auto;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
 
-li {
-    margin: 10px 0;
-    font-size: 18px;
+/* Main list items */
+ol > li {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 15px 0;
+    color: #333;
 }
 
+/* Sub list */
 ul {
-    margin-top: 5px;
-    color: #555;
+    margin-top: 8px;
+    padding-left: 20px;
 }
 
+/* Sub list items */
 ul li {
     font-size: 16px;
+    color: #555;
+    padding: 5px;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+/* Hover effect */
+ul li:hover {
+    background-color: #e0e7ff;
+    transform: translateX(5px);
 }

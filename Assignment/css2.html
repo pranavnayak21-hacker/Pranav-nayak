@@ -1,52 +1,38 @@
-body {
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #667eea, #764ba2);
-    margin: 0;
-    padding: 30px;
-}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Frontend List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 
-/* Heading */
-h2 {
-    text-align: center;
-    color: white;
-    margin-bottom: 20px;
-}
+<body>
 
-/* Ordered list container */
-ol {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    width: 55%;
-    margin: auto;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-}
+<h2>An Ordered HTML List</h2>
 
-/* Main list items */
-ol > li {
-    font-size: 20px;
-    font-weight: bold;
-    margin: 15px 0;
-    color: #333;
-}
+<ol type="a">
+  <li>Frontend Development
+    <ul>
+      <li>HTML5</li>
+      <li>CSS3</li>
+      <li>JavaScript</li>
+    </ul>
+  </li>
 
-/* Sub list */
-ul {
-    margin-top: 8px;
-    padding-left: 20px;
-}
+  <li>Styling & Frameworks
+    <ul>
+      <li>Bootstrap</li>
+      <li>Tailwind CSS</li>
+    </ul>
+  </li>
 
-/* Sub list items */
-ul li {
-    font-size: 16px;
-    color: #555;
-    padding: 5px;
-    border-radius: 6px;
-    transition: 0.3s;
-}
+  <li>Tools & Platforms
+    <ul>
+      <li>Git</li>
+      <li>GitHub</li>
+      <li>VS Code</li>
+    </ul>
+  </li>
+</ol>
 
-/* Hover effect */
-ul li:hover {
-    background-color: #e0e7ff;
-    transform: translateX(5px);
-}
+</body>
+</html>

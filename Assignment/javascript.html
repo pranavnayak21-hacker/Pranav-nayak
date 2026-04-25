@@ -45,13 +45,15 @@
 <script>
     function getUserInfo() {
         let name = prompt("Enter your name:");
+        let age = prompt("Enter your age:");
         let course = prompt("What are you studying?");
-        
-        if (name && course) {
+
+        if (name && age && course) {
             alert("Hello " + name + "! Welcome 🎉");
 
             document.getElementById("intro").innerHTML =
                 "Hi, I am <b>" + name + "</b>.<br>" +
+                "I am <b>" + age + "</b> years old.<br>" +
                 "I am studying <b>" + course + "</b>.<br>" +
                 "Nice to meet you!";
         } else {

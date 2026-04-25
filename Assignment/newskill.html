@@ -5,61 +5,111 @@
     <title>Tech Blog</title>
 
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            background-color: lightgrey;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            width: 400px;
             text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            animation: fadeIn 1s ease-in-out;
         }
 
         h1 {
-            color: darkblue;
+            color: #333;
+            margin-bottom: 10px;
         }
 
         h2 {
-            color: #333;
+            color: #666;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
         }
 
         ul {
-            list-style-type: square;
-            display: inline-block;
-            text-align: left;
+            list-style: none;
+            margin-bottom: 20px;
         }
 
         li {
-            margin: 5px 0;
+            background: #f1f3f6;
+            margin: 8px 0;
+            padding: 10px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        li:hover {
+            background: #667eea;
+            color: white;
+            transform: scale(1.05);
         }
 
         button {
-            padding: 10px 15px;
-            margin-top: 15px;
+            padding: 10px 18px;
             border: none;
-            border-radius: 6px;
-            background-color: darkblue;
+            border-radius: 8px;
+            background: #667eea;
             color: white;
+            font-size: 15px;
             cursor: pointer;
+            transition: 0.3s;
         }
 
         button:hover {
-            background-color: navy;
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
 
 <body>
 
-    <h1>Tech Blog</h1>
-    <h2>Computer Science and Engineering</h2>
+    <div class="card">
+        <h1>Tech Blog</h1>
+        <h2>Computer Science and Engineering</h2>
 
-    <p>We are learning many programming languages like:</p>
+        <p>We are learning programming languages like:</p>
 
-    <ul id="skillList">
-        <li>Python</li>
-        <li>C</li>
-        <li>Java</li>
-    </ul>
+        <ul id="skillList">
+            <li>Python</li>
+            <li>C</li>
+            <li>Java</li>
+        </ul>
 
-    <br>
-    <button onclick="addSkill()">Add Skill</button>
+        <button onclick="addSkill()">+ Add Skill</button>
+    </div>
 
     <script>
         function addSkill() {

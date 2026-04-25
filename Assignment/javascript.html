@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Personalized Introduction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            text-align: center;
+            color: white;
+            margin-top: 100px;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            border-radius: 15px;
+            display: inline-block;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Welcome to My Page</h1>
+    <p id="intro">Click the button to introduce yourself!</p>
+    <button onclick="getUserInfo()">Start</button>
+</div>
+
+<script>
+    function getUserInfo() {
+        let name = prompt("Enter your name:");
+        let course = prompt("What are you studying?");
+        
+        if (name && course) {
+            alert("Hello " + name + "! Welcome 🎉");
+
+            document.getElementById("intro").innerHTML =
+                "Hi, I am <b>" + name + "</b>.<br>" +
+                "I am studying <b>" + course + "</b>.<br>" +
+                "Nice to meet you!";
+        } else {
+            alert("Please enter all details!");
+        }
+    }
+</script>
+
+</body>
+</html>

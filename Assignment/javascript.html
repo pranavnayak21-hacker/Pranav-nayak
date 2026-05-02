@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Personalized Introduction</title>
+
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,6 +35,7 @@
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
@@ -44,21 +46,40 @@
 
 <script>
     function getUserInfo() {
+
         let name = prompt("Enter your name:");
         let age = prompt("Enter your age:");
         let course = prompt("What are you studying?");
 
-        if (name && age && course) {
-            alert("Hello " + name + "! Welcome 🎉");
+        debugger; // 🔥 MAIN DEBUG POINT (check all inputs)
 
-            document.getElementById("intro").innerHTML =
-                "Hi, I am <b>" + name + "</b>.<br>" +
-                "I am <b>" + age + "</b> years old.<br>" +
-                "I am studying <b>" + course + "</b>.<br>" +
-                "Nice to meet you!";
-        } else {
+        // Convert age to number
+        age = Number(age);
+
+        // Validate inputs
+        if (!name || !age || !course) {
+            debugger; // 🔥 DEBUG when something is missing
             alert("Please enter all details!");
+            return;
         }
+
+        // Extra validation (smart move)
+        if (age <= 0 || isNaN(age)) {
+            debugger; // 🔥 DEBUG invalid age
+            alert("Please enter a valid age!");
+            return;
+        }
+
+        alert("Hello " + name + "! Welcome 🎉");
+
+        // Final output
+        document.getElementById("intro").innerHTML =
+            "Hi, I am <b>" + name + "</b>.<br>" +
+            "I am <b>" + age + "</b> years old.<br>" +
+            "I am studying <b>" + course + "</b>.<br>" +
+            "Nice to meet you!";
+
+        console.log("User Data:", { name, age, course });
     }
 </script>
 

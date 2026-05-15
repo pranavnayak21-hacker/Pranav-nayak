@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Survey Form</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+            padding: 30px;
+        }
+
+        fieldset {
+            width: 400px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        legend {
+            font-size: 22px;
+            font-weight: bold;
+            color: blue;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 15px;
+            background: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: darkblue;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<fieldset>
+
+    <legend>Student Survey</legend>
+
+    <h3>Select Gender</h3>
+
+    <input type="radio" name="gender" value="Male"> Male
+    <input type="radio" name="gender" value="Female"> Female
+
+    <h3>Select Skills</h3>
+
+    <input type="checkbox" value="HTML"> HTML <br><br>
+    <input type="checkbox" value="CSS"> CSS <br><br>
+    <input type="checkbox" value="JavaScript"> JavaScript <br><br>
+    <input type="checkbox" value="Python"> Python <br><br>
+
+    <button onclick="showResult()">Submit</button>
+
+    <p id="result"></p>
+
+</fieldset>
+
+<script>
+
+function showResult() {
+
+    let gender = document.querySelector('input[name="gender"]:checked');
+
+    let skills = document.querySelectorAll('input[type="checkbox"]');
+
+    let selectedSkills = "";
+
+    // FOR LOOP
+    for(let i = 0; i < skills.length; i++) {
+
+        if(skills[i].checked) {
+
+            selectedSkills += skills[i].value + " ";
+        }
+    }
+
+    document.getElementById("result").innerHTML =
+        "<h3>Selected Details</h3>" +
+        "Gender: " + gender.value + "<br>" +
+        "Skills: " + selectedSkills;
+}
+
+</script>
+
+</body>
+</html>

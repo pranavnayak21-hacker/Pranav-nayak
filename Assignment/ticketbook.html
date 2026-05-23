@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bus Ticket Booking</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      background:#f2f2f2;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
+
+    .container{
+      background:white;
+      width:350px;
+      padding:25px;
+      border-radius:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:#333;
+    }
+
+    input, select, button{
+      width:100%;
+      padding:10px;
+      margin-top:10px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:16px;
+    }
+
+    button{
+      background:#007bff;
+      color:white;
+      border:none;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
+    button:hover{
+      background:#0056b3;
+    }
+
+    .ticket{
+      margin-top:20px;
+      padding:15px;
+      background:#e8f5e9;
+      border-radius:10px;
+      display:none;
+    }
+
+    .ticket h3{
+      margin-bottom:10px;
+      color:green;
+    }
+
+    .ticket p{
+      margin:5px 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>Bus Ticket Booking</h2>
+
+    <input type="text" id="name" placeholder="Enter Your Name">
+
+    <select id="from">
+      <option value="">From</option>
+      <option>Mangalore</option>
+      <option>Bangalore</option>
+      <option>Mysore</option>
+    </select>
+
+    <select id="to">
+      <option value="">To</option>
+      <option>Mangalore</option>
+      <option>Bangalore</option>
+      <option>Mysore</option>
+    </select>
+
+    <input type="date" id="date">
+
+    <button onclick="bookTicket()">Book Ticket</button>
+
+    <div class="ticket" id="ticket">
+      <h3>Ticket Confirmed ✅</h3>
+      <p><strong>Name:</strong> <span id="tname"></span></p>
+      <p><strong>From:</strong> <span id="tfrom"></span></p>
+      <p><strong>To:</strong> <span id="tto"></span></p>
+      <p><strong>Date:</strong> <span id="tdate"></span></p>
+    </div>
+  </div>
+
+  <script>
+    function bookTicket() {
+
+      let name = document.getElementById("name").value;
+      let from = document.getElementById("from").value;
+      let to = document.getElementById("to").value;
+      let date = document.getElementById("date").value;
+
+      if(name === "" || from === "" || to === "" || date === ""){
+        alert("Please fill all details");
+        return;
+      }
+
+      if(from === to){
+        alert("From and To cannot be same");
+        return;
+      }
+
+      document.getElementById("ticket").style.display = "block";
+
+      document.getElementById("tname").innerText = name;
+      document.getElementById("tfrom").innerText = from;
+      document.getElementById("tto").innerText = to;
+      document.getElementById("tdate").innerText = date;
+    }
+  </script>
+
+</body>
+</html>
